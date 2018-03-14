@@ -67,7 +67,6 @@ module ImpactRadiusAPI
     private
 
     def process(response)
-
       case response.code
       when 200, 201, 204
         APIResponse.new(response, @resource)
@@ -81,7 +80,7 @@ module ImpactRadiusAPI
     end
 
     def pre_uri
-      if %w(Ads PromotionalAds ActionInquiries Campaigns Acitons).include? @resource
+      if %w(Ads PromotionalAds ActionInquiries Campaigns Actions).include? @resource
         ""
       else
         "product."
